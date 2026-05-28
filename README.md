@@ -50,7 +50,7 @@ Five visualizations assembled into one interactive dashboard:
 - Sales and profit ratio by category (treemap)
 - Revenue by customer segment (bar chart)
 
-🔗 **[View Dashboard on Tableau Public](https://public.tableau.com/app/profile/matthew.koch/viz/shared/56B8SXKT9)**
+🔗 **[Link to Tableau Dashboard](https://public.tableau.com/app/profile/matthew.koch/viz/shared/56B8SXKT9)**
 
 ---
 
@@ -70,24 +70,6 @@ Consistent order volume with minimal seasonality across the full period, suggest
 
 **5. All customer segments experience equal late delivery rates**  
 Consumer, Corporate, and Home Office segments all had ~55% late rates, meaning no segment is being prioritized over another.
-
----
-
-## Repository Structure
-
-```
-dataco-supply-chain-analytics/
-│
-├── README.md
-├── sql/
-│   ├── 01_late_delivery_by_shipping_mode.sql
-│   ├── 02_category_profit.sql
-│   ├── 03_monthly_revenue_trend.sql
-│   ├── 04_region_delay.sql
-│   └── 05_customer_segment.sql
-└── excel/
-    └── data_cleaning_steps.md
-```
 
 ---
 
