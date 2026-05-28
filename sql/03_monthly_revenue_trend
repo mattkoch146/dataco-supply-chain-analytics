@@ -1,0 +1,12 @@
+-- Monthly Revenue Trend
+-- Question: How has revenue trended over time?
+-- Finding: Revenue held steady at ~$1M/month from 2015-2017. Data becomes incomplete after October 2017.
+
+SELECT
+  FORMAT_DATE('%Y-%m', DATE(`order date _DateOrders_`)) AS month,
+  COUNT(*) AS total_orders,
+  ROUND(SUM(Sales), 2) AS revenue
+FROM supply_chain.orders
+WHERE Data_Quality_Flag = 'OK'
+GROUP BY month
+ORDER BY month
