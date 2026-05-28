@@ -1,0 +1,15 @@
+-- Revenue and Performance by Customer Segment
+-- Question: How do customer segments compare in revenue and delivery performance?
+-- Finding: All three segments have nearly identical profit ratios (~0.121) and late delivery rates (~55%),
+-- indicating no segment is being prioritized. Consumer leads in total revenue at $19M.
+
+SELECT
+  `Customer Segment`,
+  COUNT(DISTINCT `Customer Id`) AS unique_customers,
+  ROUND(SUM(Sales), 2) AS total_revenue,
+  ROUND(AVG(`Order Item Profit Ratio`), 3) AS avg_profit_ratio,
+  ROUND(AVG(`Late_delivery_risk`) * 100, 2) AS late_rate_pct
+FROM supply_chain.orders
+WHERE Data_Quality_Flag = 'OK'
+GROUP BY `Customer Segment`
+ORDER BY total_revenue DESC
