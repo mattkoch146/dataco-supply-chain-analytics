@@ -1,0 +1,14 @@
+-- Sales and Profit Ratio by Product Category
+-- Question: Which product categories drive the most revenue and profit?
+-- Finding: Fishing leads in revenue ($6.9M) but Women's Clothing has the highest profit ratio (0.151).
+
+SELECT
+  `Category Name _Helper_`,
+  ROUND(AVG(`Order Item Profit Ratio`), 3) AS avg_profit_ratio,
+  ROUND(SUM(Sales), 2) AS total_sales,
+  COUNT(*) AS total_orders
+FROM supply_chain.orders
+WHERE Data_Quality_Flag = 'OK'
+GROUP BY `Category Name _Helper_`
+ORDER BY total_sales DESC
+LIMIT 20
